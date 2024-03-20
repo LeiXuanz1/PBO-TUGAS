@@ -13,7 +13,7 @@ public class Tugas {
         // Add sample mahasiswa users
         studentUsers.put("202310370311402", "");
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner objInput = new Scanner(System.in);
         int pilihan = 0;
 
         while (pilihan != 3) {
@@ -22,16 +22,16 @@ public class Tugas {
             System.out.println("2. Login as admin");
             System.out.println("3. Exit");
             System.out.print("Enter your choice: ");
-            pilihan = scanner.nextInt();
-            scanner.nextLine();
+            pilihan = objInput.nextInt();
+            objInput.nextLine();
 
             switch (pilihan) {
                 case 1:
                     System.out.print("Enter your NIM: ");
-                    String nim = scanner.nextLine();
+                    String nim = objInput.nextLine();
                     if (nim.length() == 15) {
                         System.out.print("Enter your password: ");
-                        String password = scanner.nextLine();
+                        String password = objInput.nextLine();
                         if (studentUsers.containsKey(nim)) {
                             if (studentUsers.get(nim).equals(password)) {
                                 System.out.println("Successful login as Student");
@@ -43,9 +43,9 @@ public class Tugas {
                     break;
                 case 2:
                     System.out.print("Enter your username (Admin) : ");
-                    String username = scanner.nextLine();
+                    String username = objInput.nextLine();
                     System.out.print("Enter your password (Admin): ");
-                    String pass = scanner.nextLine();
+                    String pass = objInput.nextLine();
                     if (adminUsers.containsKey(username)) {
                         if (adminUsers.get(username).equals(pass)) {
                             System.out.println("Successful login as Admin");
